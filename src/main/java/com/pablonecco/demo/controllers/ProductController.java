@@ -31,4 +31,9 @@ public class ProductController {
     public boolean deleteById (@PathVariable("id") int id) {
         return productService.remove(id);
     }
+
+    @PostMapping("/create")
+    public Product createProduct (@RequestBody Product product) {
+        return productService.insertOrUpdate(product);
+    }
 }
